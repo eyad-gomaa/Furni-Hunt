@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:furni_hunt/features/authentication/presentation/login_view.dart';
 import 'package:furni_hunt/features/onboarding/presentation/onboarding_view.dart';
 import 'package:go_router/go_router.dart';
 
@@ -7,7 +8,7 @@ class RouterPath {
   // static const String genderView = '/gender';
   // static const String getStartedView = '/getStarted';
   // static const String signUpView = '/signUpView';
-  // static const String signInView = '/signInView';
+  static const String loginView = '/loginView';
   // static const String homeView = '/homeView';
   // static const String detailsView = '/detailsView';
   // static const String brandView = '/brandView';
@@ -28,6 +29,12 @@ final GoRouter router = GoRouter(
       path: RouterPath.onboardingView,
       builder: (BuildContext context, GoRouterState state) {
         return const OnboardingView();
+      },
+    ),
+    GoRoute(
+      path: RouterPath.loginView,
+      builder: (BuildContext context, GoRouterState state) {
+        return const LoginView();
       },
     ),
   ],

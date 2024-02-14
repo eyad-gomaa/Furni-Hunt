@@ -1,9 +1,11 @@
 import 'dart:ui';
 
 import 'package:flutter/material.dart';
-import 'package:furni_hunt/core/resources/font_style.dart';
+import 'package:furni_hunt/core/utils/app_router.dart';
+import 'package:go_router/go_router.dart';
 
 import '../../../../core/resources/color_manager.dart';
+import '../../../../core/resources/font_size_manager.dart';
 import 'custom_button.dart';
 
 class OnboardingViewBody extends StatelessWidget {
@@ -36,15 +38,16 @@ class OnboardingViewBody extends StatelessWidget {
                 child: Column(
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
-                    Text(
-                      "WELCOME",
-                      style: FontStyleManager.fontStyle16
-                          .copyWith(color: ColorManager.primary),
-                    ),
-                    Text(
-                      "FurniHunt.io",
-                      style: Theme.of(context).textTheme.displayLarge,
-                    ),
+                    Text("WELCOME",
+                        style: TextStyle(
+                            fontSize: FontSizeManager.fontSize16,
+                            fontWeight: FontWeight.bold,
+                            color: ColorManager.primary)),
+                    Text("FurniHunt.io",
+                        style: TextStyle(
+                            fontSize: FontSizeManager.fontSize42,
+                            fontWeight: FontWeight.bold,
+                            color: ColorManager.white)),
                     Text(
                       "We serve you with the best gadgets for your home workspace",
                       style: Theme.of(context)
@@ -52,15 +55,18 @@ class OnboardingViewBody extends StatelessWidget {
                           .bodySmall!
                           .copyWith(color: ColorManager.white),
                     ),
-                    SizedBox(
+                    const SizedBox(
                       height: 39,
                     ),
-                    const CustomButton(
+                    CustomButton(
                       text: "Browse Shop",
+                      onTap: () {},
                     ),
                     Center(
                       child: TextButton(
-                          onPressed: () {},
+                          onPressed: () {
+                            GoRouter.of(context).push(RouterPath.loginView);
+                          },
                           child: Text(
                             "Log In",
                             style: Theme.of(context).textTheme.bodyLarge,

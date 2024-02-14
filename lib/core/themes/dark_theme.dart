@@ -15,21 +15,32 @@ ThemeData darkTheme = ThemeData(
   floatingActionButtonTheme: FloatingActionButtonThemeData(
       backgroundColor: ColorManager.black, iconSize: 24.0),
   textTheme: TextTheme(
-    displayLarge: FontStyleManager.fontStyle42,
-    displayMedium: FontStyleManager.fontStyle28,
-    displaySmall: FontStyleManager.fontStyle21,
-    bodyLarge: FontStyleManager.fontStyle16.copyWith(
+    displayLarge: FontStyleManager.fontStyle42(
+      color: ColorManager.black,
       fontWeight: FontWeight.bold,
     ),
-    bodyMedium: FontStyleManager.fontStyle16.copyWith(
+    displayMedium: FontStyleManager.fontStyle28(
+      color: ColorManager.black,
+      fontWeight: FontWeight.bold,
+    ),
+    displaySmall: FontStyleManager.fontStyle21(
+      color: ColorManager.black,
+      fontWeight: FontWeight.bold,
+    ),
+    bodyLarge: FontStyleManager.fontStyle16(
+      color: ColorManager.greyDeep,
+      fontWeight: FontWeight.bold,
+    ),
+    bodyMedium: FontStyleManager.fontStyle16(
+      color: ColorManager.black,
+      fontWeight: FontWeight.bold,
+    ),
+    bodySmall: FontStyleManager.fontStyle12(
+      color: ColorManager.greyDeep,
       fontWeight: FontWeight.w500,
     ),
-    bodySmall: FontStyleManager.fontStyle12.copyWith(
-      fontWeight: FontWeight.w500,
-    ),
-    titleSmall:
-        FontStyleManager.fontStyle16.copyWith(color: ColorManager.black),
-    titleMedium: FontStyleManager.fontStyle12
-        .copyWith(fontWeight: FontWeight.bold, color: ColorManager.black),
+    titleSmall: FontStyleManager.fontStyle16(color: ColorManager.black),
+    titleMedium: FontStyleManager.fontStyle12(
+        fontWeight: FontWeight.bold, color: ColorManager.black),
   ),
 );

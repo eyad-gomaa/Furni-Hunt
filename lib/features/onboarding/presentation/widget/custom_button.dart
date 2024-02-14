@@ -6,24 +6,29 @@ class CustomButton extends StatelessWidget {
     super.key,
     required this.text,
     this.color,
+    required this.onTap,
   });
   final Color? color;
   final String text;
+  final Function() onTap;
   @override
   Widget build(BuildContext context) {
-    return Container(
-      width: MediaQuery.sizeOf(context).width,
-      height: 57,
-      decoration: BoxDecoration(
-          color: color ?? ColorManager.primary,
-          borderRadius: BorderRadius.circular(8)),
-      child: Center(
-        child: Text(
-          text,
-          style: TextStyle(
-              color: ColorManager.black,
-              fontSize: 16,
-              fontWeight: FontWeight.bold),
+    return GestureDetector(
+      onTap: onTap,
+      child: Container(
+        width: MediaQuery.sizeOf(context).width,
+        height: 57,
+        decoration: BoxDecoration(
+            color: color ?? ColorManager.primary,
+            borderRadius: BorderRadius.circular(8)),
+        child: Center(
+          child: Text(
+            text,
+            style: TextStyle(
+                color: ColorManager.black,
+                fontSize: 16,
+                fontWeight: FontWeight.bold),
+          ),
         ),
       ),
     );
