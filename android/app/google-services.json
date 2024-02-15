@@ -1,0 +1,54 @@
+{
+  "project_info": {
+    "project_number": "93436856937",
+    "project_id": "furnihunt",
+    "storage_bucket": "furnihunt.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:93436856937:android:8b78d3e275a0a68538b0f8",
+        "android_client_info": {
+          "package_name": "com.example.furni_hunt"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "93436856937-6bg4tcn3bh7ju861eve4b6pt63fp4kjj.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.furni_hunt",
+            "certificate_hash": "8899b23f64d8be2df8d2e98862123b9ebb4798dd"
+          }
+        },
+        {
+          "client_id": "93436856937-3h56jtr75ut8s7r1ghes304093uulmrt.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBzmGCJh4casyxovgPJrRHpPbcEkA8xVWQ"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "93436856937-3h56jtr75ut8s7r1ghes304093uulmrt.apps.googleusercontent.com",
+              "client_type": 3
+            },
+            {
+              "client_id": "93436856937-4jmtosqkkcesbfai1toe4tlabeqatcs1.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "com.example.furniHunt"
+              }
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

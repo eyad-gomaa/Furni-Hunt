@@ -14,6 +14,21 @@ ThemeData darkTheme = ThemeData(
   ),
   floatingActionButtonTheme: FloatingActionButtonThemeData(
       backgroundColor: ColorManager.black, iconSize: 24.0),
+  inputDecorationTheme: InputDecorationTheme(
+        border: buildOutlineInputBorder(),
+        enabledBorder: buildOutlineInputBorder(),
+        disabledBorder: buildOutlineInputBorder(),
+        filled: true,
+        fillColor: ColorManager.shade,
+        floatingLabelBehavior: FloatingLabelBehavior.always,
+        floatingLabelAlignment: FloatingLabelAlignment.start,
+        labelStyle: FontStyleManager.fontStyle12(
+        fontWeight: FontWeight.bold, color: ColorManager.black),
+        hintStyle: FontStyleManager.fontStyle12(
+      color: ColorManager.greyDeep,
+      fontWeight: FontWeight.w500,
+    ),
+        ),
   textTheme: TextTheme(
     displayLarge: FontStyleManager.fontStyle42(
       color: ColorManager.black,
@@ -44,3 +59,11 @@ ThemeData darkTheme = ThemeData(
         fontWeight: FontWeight.bold, color: ColorManager.black),
   ),
 );
+
+
+OutlineInputBorder buildOutlineInputBorder() {
+  return OutlineInputBorder(
+    borderSide: BorderSide.none,
+    borderRadius: BorderRadius.circular(8),
+  );
+}

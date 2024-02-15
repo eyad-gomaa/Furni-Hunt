@@ -21,16 +21,11 @@ class CustomLoginForm extends StatelessWidget {
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
           CustomTextFormField(
+            
               context: context,
               label: "Email",
               hint: "Eg.jamesburnes@gmail.com",
-              validator: (value) {
-                if (value == null) {
-                  return "Required Field";
-                } else {
-                  return "Success";
-                }
-              },
+              validator: (value) => value!.isEmpty ? "Required Field" : null,
               controller: emailController),
           const Gap(26),
           CustomPasswordTextFormField(
@@ -38,13 +33,7 @@ class CustomLoginForm extends StatelessWidget {
             context: context,
             label: 'Password',
             hint: '',
-            validator: (value) {
-              if (value == null) {
-                return "Required Field";
-              } else {
-                return "Success";
-              }
-            },
+            validator: (value) => value!.isEmpty ? "Required Field" : null,
           )
         ],
       ),

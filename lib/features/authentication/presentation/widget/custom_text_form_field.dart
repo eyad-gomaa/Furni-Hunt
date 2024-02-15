@@ -18,23 +18,15 @@ class CustomTextFormField extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return TextFormField(
+      style: TextStyle(color: ColorManager.black),
       decoration: InputDecoration(
-        border: buildOutlineInputBorder(),
-        enabledBorder: buildOutlineInputBorder(),
-        disabledBorder: buildOutlineInputBorder(),
-        filled: true,
-        fillColor: ColorManager.shade,
-        floatingLabelBehavior: FloatingLabelBehavior.always,
-        floatingLabelAlignment: FloatingLabelAlignment.start,
-        labelStyle: Theme.of(context).textTheme.titleMedium,
         label: Padding(
-          padding: const EdgeInsets.only(bottom: 10),
+          padding: const EdgeInsets.only(bottom: 20),
           child: Text(
             label,
           ),
         ),
         hintText: hint,
-        hintStyle: Theme.of(context).textTheme.bodySmall,
       ),
       keyboardType: TextInputType.emailAddress,
       onTapOutside: (event) {
@@ -44,11 +36,4 @@ class CustomTextFormField extends StatelessWidget {
       controller: controller,
     );
   }
-}
-
-OutlineInputBorder buildOutlineInputBorder() {
-  return OutlineInputBorder(
-    borderSide: BorderSide.none,
-    borderRadius: BorderRadius.circular(8),
-  );
 }

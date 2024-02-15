@@ -30,33 +30,8 @@ class _CustomPasswordTextFormFieldState
   @override
   Widget build(BuildContext context) {
     return TextFormField(
-      decoration: InputDecoration(
-          border: buildOutlineInputBorder(),
-          enabledBorder: buildOutlineInputBorder(),
-          disabledBorder: buildOutlineInputBorder(),
-          filled: true,
-          fillColor: ColorManager.shade,
-          floatingLabelBehavior: FloatingLabelBehavior.always,
-          floatingLabelAlignment: FloatingLabelAlignment.start,
-          labelStyle: Theme.of(context).textTheme.titleMedium,
-          label: Padding(
-            padding: const EdgeInsets.only(bottom: 10),
-            child: Text(
-              widget.label,
-            ),
-          ),
-          hintText: widget.hint,
-          hintStyle: Theme.of(context).textTheme.bodySmall,
-          suffixIcon: GestureDetector(
-            onTap: () {
-              showPassword = !showPassword;
-              setState(() {});
-            },
-            child: Icon(
-              showPassword ? FontAwesomeIcons.eye : FontAwesomeIcons.eyeSlash,
-              color: Colors.black,
-            ),
-          )),
+      style: TextStyle(color: ColorManager.black),
+      decoration: passwordBuildInputDecoration(context),
       obscureText: !showPassword,
       keyboardType: TextInputType.emailAddress,
       onTapOutside: (event) {
@@ -66,11 +41,25 @@ class _CustomPasswordTextFormFieldState
       controller: widget.controller,
     );
   }
-}
 
-OutlineInputBorder buildOutlineInputBorder() {
-  return OutlineInputBorder(
-    borderSide: BorderSide.none,
-    borderRadius: BorderRadius.circular(8),
-  );
+  InputDecoration passwordBuildInputDecoration(BuildContext context) {
+    return InputDecoration(
+        label: Padding(
+          padding: const EdgeInsets.only(bottom: 20),
+          child: Text(
+            widget.label,
+          ),
+        ),
+        hintText: widget.hint,
+        suffixIcon: GestureDetector(
+          onTap: () {
+            showPassword = !showPassword;
+            setState(() {});
+          },
+          child: Icon(
+            showPassword ? FontAwesomeIcons.eye : FontAwesomeIcons.eyeSlash,
+            color: Colors.black,
+          ),
+        ));
+  }
 }
