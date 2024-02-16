@@ -1,11 +1,13 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:furni_hunt/features/authentication/presentation/model/sign_in_cubit.dart';
-import 'package:furni_hunt/features/authentication/presentation/widget/auth_bottom_options.dart';
-import 'package:furni_hunt/features/authentication/presentation/widget/custom_snack_bar.dart';
-import 'package:furni_hunt/features/authentication/presentation/widget/over_app_loading_indicator.dart';
+import 'package:furni_hunt/core/utils/app_router.dart';
+import 'package:furni_hunt/features/authentication/presentation/manager/sign_in_cubit/sign_in_cubit.dart';
+import 'package:furni_hunt/features/authentication/presentation/view/widget/auth_bottom_options.dart';
+import 'package:furni_hunt/features/authentication/presentation/view/widget/custom_snack_bar.dart';
+import 'package:furni_hunt/features/authentication/presentation/view/widget/over_app_loading_indicator.dart';
 import 'package:furni_hunt/features/onboarding/presentation/widget/custom_button.dart';
 import 'package:gap/gap.dart';
+import 'package:go_router/go_router.dart';
 import 'custom_login_form.dart';
 import 'external_auth_buttons.dart';
 import 'login_welcome_text.dart';
@@ -86,7 +88,14 @@ class _LoginViewBodyState extends State<LoginViewBody> {
                               }
                             },
                           ),
-                          const AuthButtomOptions()
+                          AuthButtomOptions(
+                            leftText: 'Forgot password?',
+                            rightText: 'Sign Up',
+                            leftOnPressed: () {},
+                            rightOnPressed: () {
+                              GoRouter.of(context).push(RouterPath.signUpView);
+                            },
+                          )
                         ],
                       )),
                 ),

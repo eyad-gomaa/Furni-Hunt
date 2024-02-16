@@ -1,19 +1,18 @@
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
-
-import '../../../../core/resources/color_manager.dart';
+import 'package:furni_hunt/core/resources/color_manager.dart';
 
 class CustomPasswordTextFormField extends StatefulWidget {
   const CustomPasswordTextFormField({
     super.key,
     required this.context,
-    required this.label,
-    required this.hint,
+    this.label,
+    this.hint,
     required this.validator,
     required this.controller,
   });
-  final String label;
-  final String hint;
+  final String? label;
+  final String? hint;
   final BuildContext context;
   final TextEditingController controller;
   final FormFieldValidator<String> validator;
@@ -29,16 +28,20 @@ class _CustomPasswordTextFormFieldState
 
   @override
   Widget build(BuildContext context) {
-    return TextFormField(
-      style: TextStyle(color: ColorManager.black),
-      decoration: passwordBuildInputDecoration(context),
-      obscureText: !showPassword,
-      keyboardType: TextInputType.emailAddress,
-      onTapOutside: (event) {
-        FocusScope.of(context).unfocus();
-      },
-      validator: widget.validator,
-      controller: widget.controller,
+    return SizedBox(
+      height: 56,
+      child: TextFormField(
+        style: TextStyle(color: ColorManager.black),
+        decoration: passwordBuildInputDecoration(context),
+        obscureText: !showPassword,
+        keyboardType: TextInputType.emailAddress,
+        onTapOutside: (event) {
+          FocusScope.of(context).unfocus();
+        },
+        validator: widget.validator,
+        controller: widget.controller,
+        
+      ),
     );
   }
 
@@ -47,10 +50,10 @@ class _CustomPasswordTextFormFieldState
         label: Padding(
           padding: const EdgeInsets.only(bottom: 20),
           child: Text(
-            widget.label,
+            widget.label ?? "",
           ),
         ),
-        hintText: widget.hint,
+        hintText: widget.hint ?? "",
         suffixIcon: GestureDetector(
           onTap: () {
             showPassword = !showPassword;

@@ -26,7 +26,7 @@ class OnboardingViewBody extends StatelessWidget {
         Positioned(
           left: 0,
           right: 0,
-          top: MediaQuery.sizeOf(context).height * 0.6,
+          top: MediaQuery.sizeOf(context).height * 0.55,
           child: ClipRRect(
             child: BackdropFilter(
               filter: ImageFilter.blur(

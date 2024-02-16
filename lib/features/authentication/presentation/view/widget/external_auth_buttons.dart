@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:furni_hunt/features/authentication/presentation/model/sign_in_cubit.dart';
-import 'package:furni_hunt/features/authentication/presentation/widget/custom_alert_dialog.dart';
+import 'package:furni_hunt/features/authentication/presentation/manager/sign_in_cubit/sign_in_cubit.dart';
+import 'package:furni_hunt/features/authentication/presentation/view/widget/custom_alert_dialog.dart';
 import 'package:gap/gap.dart';
 import 'custom_auth_button.dart';
 

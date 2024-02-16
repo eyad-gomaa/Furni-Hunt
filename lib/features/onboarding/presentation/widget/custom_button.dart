@@ -6,11 +6,12 @@ class CustomButton extends StatelessWidget {
     super.key,
     required this.text,
     this.color,
-    required this.onTap,
+    required this.onTap, this.isLoading,
   });
   final Color? color;
   final String text;
   final Function() onTap;
+  final bool? isLoading;
   @override
   Widget build(BuildContext context) {
     return GestureDetector(
@@ -22,7 +23,7 @@ class CustomButton extends StatelessWidget {
             color: color ?? ColorManager.primary,
             borderRadius: BorderRadius.circular(8)),
         child: Center(
-          child: Text(
+          child: isLoading == true ? const Center(child: CircularProgressIndicator(),) : Text(
             text,
             style: TextStyle(
                 color: ColorManager.black,

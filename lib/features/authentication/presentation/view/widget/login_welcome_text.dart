@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
-
-import '../../../../core/resources/color_manager.dart';
+import 'package:furni_hunt/core/resources/color_manager.dart';
 
 class LoginWelcomeText extends StatelessWidget {
   const LoginWelcomeText({super.key});
@@ -17,8 +16,20 @@ class LoginWelcomeText extends StatelessWidget {
               .bodyLarge!
               .copyWith(color: ColorManager.greyDeeper2),
         ),
-        Text("Welcome Back", style: Theme.of(context).textTheme.displayMedium),
+        Row(
+          children: [
+            Text("Welcome To ",
+                style: Theme.of(context).textTheme.displaySmall),
+            Text("FurniHunt.io",
+                style: Theme.of(context)
+                    .textTheme
+                    .displaySmall!
+                    .copyWith(color: ColorManager.primary)),
+          ],
+        ),
       ],
     );
   }
 }
+
+class ColorManger {}

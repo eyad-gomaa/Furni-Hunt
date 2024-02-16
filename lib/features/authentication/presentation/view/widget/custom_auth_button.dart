@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:furni_hunt/core/resources/color_manager.dart';
 
-import '../../../../core/resources/color_manager.dart';
 
 class CustomAuthButton extends StatelessWidget {
   const CustomAuthButton({
