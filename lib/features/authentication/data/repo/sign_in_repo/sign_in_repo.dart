@@ -7,4 +7,6 @@ abstract class SignInRepo {
       {required String email, required String password});
 
   Future<Either<String, Failure>> signInWithGoogle();
+
+  Future<Either<String,Failure>> googleSignInCreateUser();
 }

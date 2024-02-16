@@ -3,8 +3,8 @@ import 'package:cloud_firestore/cloud_firestore.dart';
 class UserModel {
   final String name;
   final String email;
-  final String phone;
-  final String points;
+  final String? phone;
+  final String? points;
   final Timestamp dateCreated;
   final List adresses;
   final List cart;
