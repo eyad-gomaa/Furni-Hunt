@@ -32,6 +32,7 @@ class _LoginViewBodyState extends State<LoginViewBody> {
               context: context,
               message: state.successMessage,
               color: Colors.green);
+              GoRouter.of(context).pushReplacement(RouterPath.homeView);
         } else if (state is SignInFailure) {
           customSnackBar(
               context: context, message: state.errMessage, color: Colors.red);

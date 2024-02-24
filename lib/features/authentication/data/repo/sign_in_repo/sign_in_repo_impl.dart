@@ -54,20 +54,20 @@ class SignInRepoImpl implements SignInRepo {
   @override
   Future<Either<String, Failure>> googleSignInCreateUser() async {
     User? user = FirebaseAuth.instance.currentUser;
-    String? userUid = user?.uid;
-    String? name = user?.displayName;
-    String? email = user?.email;
+    final String? userUid = user?.uid;
+    final String? name = user?.displayName;
+    final String? email = user?.email;
     UserModel userModel = UserModel(
         name: name!,
         email: email!,
         phone: null,
         points: null,
         dateCreated: Timestamp.now(),
-        adresses: [],
+        adresses:[],
         cart: [],
         wish: [],
         orders: []);
-    if (userUid != null) {
+    if (user != null) {
       try {
         FirebaseFirestore firestore = FirebaseFirestore.instance;
         CollectionReference users = firestore.collection('users');

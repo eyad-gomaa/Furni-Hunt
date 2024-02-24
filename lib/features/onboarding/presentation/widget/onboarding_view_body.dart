@@ -18,7 +18,6 @@ class OnboardingViewBody extends StatelessWidget {
         Container(
             width: MediaQuery.sizeOf(context).width,
             height: MediaQuery.sizeOf(context).height,
-            color: Colors.red,
             child: Image.asset(
               "assets/images/OnboardingBgImage.png",
               fit: BoxFit.fill,
@@ -65,7 +64,7 @@ class OnboardingViewBody extends StatelessWidget {
                     Center(
                       child: TextButton(
                           onPressed: () {
-                            GoRouter.of(context).push(RouterPath.loginView);
+                            GoRouter.of(context).push(RouterPath.signInView);
                           },
                           child: Text(
                             "Log In",

@@ -4,7 +4,7 @@ class UserModel {
   final String name;
   final String email;
   final String? phone;
-  final String? points;
+  final int? points;
   final Timestamp dateCreated;
   final List adresses;
   final List cart;
@@ -15,15 +15,14 @@ class UserModel {
       {required this.name,
       required this.email,
       required this.phone,
-      required this.points,
+      this.points = 0,
       required this.dateCreated,
       required this.adresses,
       required this.cart,
       required this.wish,
       required this.orders});
 
-
-  factory UserModel.fromJson(Map<String, dynamic>json) {
+  factory UserModel.fromJson(Map<String, dynamic> json) {
     return UserModel(
       name: json['name'],
       email: json['email'],
@@ -37,17 +36,17 @@ class UserModel {
     );
   }
 
-  Map<String,dynamic>toJson(){
+  Map<String, dynamic> toJson() {
     return {
-      'name' : name,
-      'email' : email,
-      'phone' : phone,
-      'points' : points,
-      'dateCreated' : dateCreated,
-      'adresses' : adresses,
-      'cart' : cart,
-      'wish' : wish,
-      'orders' : orders,
+      'name': name,
+      'email': email,
+      'phone': phone,
+      'points': points,
+      'dateCreated': dateCreated,
+      'adresses': adresses,
+      'cart': cart,
+      'wish': wish,
+      'orders': orders,
     };
   }
 }
