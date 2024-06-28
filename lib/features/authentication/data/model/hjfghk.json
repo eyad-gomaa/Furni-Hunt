@@ -1,0 +1,115 @@
+{
+  "adresses":["goiuguiogyho","goiuguiogyho","goiuguiogyho"],
+  "cart":[
+    {
+      "cartQuantity": 1,
+      "createdAt":"createdAt",
+      "productCategory":"ioyhp",
+      "productDescription":"uygpiypioy",
+      "productId":"jihk786897698",
+      "productImage":["goiuguiogyho","goiuguiogyho","goiuguiogyho"],
+      "productName":"productName",
+      "productPrice":1000,
+      "productQuantity":30
+    },
+    {
+      "cartQuantity": 1,
+      "createdAt":"createdAt",
+      "productCategory":"ioyhp",
+      "productDescription":"uygpiypioy",
+      "productId":"jihk786897698",
+      "productImage":["goiuguiogyho","goiuguiogyho","goiuguiogyho"],
+      "productName":"productName",
+      "productPrice":1000,
+      "productQuantity":30
+    },
+    {
+      "cartQuantity": 1,
+      "createdAt":"createdAt",
+      "productCategory":"ioyhp",
+      "productDescription":"uygpiypioy",
+      "productId":"jihk786897698",
+      "productImage":["goiuguiogyho","goiuguiogyho","goiuguiogyho"],
+      "productName":"productName",
+      "productPrice":1000,
+      "productQuantity":30
+    }
+    
+  ],
+  "dateCreated":"dateCreated",
+  "email":"email",
+  "orders":[
+    {
+      "cartQuantity": 1,
+      "createdAt":"createdAt",
+      "productCategory":"ioyhp",
+      "productDescription":"uygpiypioy",
+      "productId":"jihk786897698",
+      "productImage":["goiuguiogyho","goiuguiogyho","goiuguiogyho"],
+      "productName":"productName",
+      "productPrice":1000,
+      "productQuantity":30
+    },
+    {
+      "cartQuantity": 1,
+      "createdAt":"createdAt",
+      "productCategory":"ioyhp",
+      "productDescription":"uygpiypioy",
+      "productId":"jihk786897698",
+      "productImage":["goiuguiogyho","goiuguiogyho","goiuguiogyho"],
+      "productName":"productName",
+      "productPrice":1000,
+      "productQuantity":30
+    },
+    {
+      "cartQuantity": 1,
+      "createdAt":"createdAt",
+      "productCategory":"ioyhp",
+      "productDescription":"uygpiypioy",
+      "productId":"jihk786897698",
+      "productImage":["goiuguiogyho","goiuguiogyho","goiuguiogyho"],
+      "productName":"productName",
+      "productPrice":1000,
+      "productQuantity":30
+    }
+    
+  ],
+  "phone":"hikjhophp",
+  "points":67869,
+  "wish":[
+    {
+      "cartQuantity": 1,
+      "createdAt":"createdAt",
+      "productCategory":"ioyhp",
+      "productDescription":"uygpiypioy",
+      "productId":"jihk786897698",
+      "productImage":["goiuguiogyho","goiuguiogyho","goiuguiogyho"],
+      "productName":"productName",
+      "productPrice":1000,
+      "productQuantity":30
+    },
+    {
+      "cartQuantity": 1,
+      "createdAt":"createdAt",
+      "productCategory":"ioyhp",
+      "productDescription":"uygpiypioy",
+      "productId":"jihk786897698",
+      "productImage":["goiuguiogyho","goiuguiogyho","goiuguiogyho"],
+      "productName":"productName",
+      "productPrice":1000,
+      "productQuantity":30
+    },
+    {
+      "cartQuantity": 1,
+      "createdAt":"createdAt",
+      "productCategory":"ioyhp",
+      "productDescription":"uygpiypioy",
+      "productId":"jihk786897698",
+      "productImage":["goiuguiogyho","goiuguiogyho","goiuguiogyho"],
+      "productName":"productName",
+      "productPrice":1000,
+      "productQuantity":30
+    }
+    
+  ]
+}

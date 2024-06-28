@@ -1,3 +1,4 @@
+import 'package:cached_network_image/cached_network_image.dart';
 import 'package:flutter/material.dart';
 import 'package:furni_hunt/core/resources/color_manager.dart';
 import 'package:furni_hunt/features/home/data/model/category_model.dart';
@@ -28,10 +29,10 @@ class CategoryContainer extends StatelessWidget {
               width: 120,
               child: ClipRRect(
                 borderRadius: BorderRadius.circular(8),
-                child: Image.network(
-                  categorymodel.image,
-                  fit: BoxFit.contain,
-                ),
+                child: CachedNetworkImage(imageUrl: categorymodel.image,
+                placeholder: (context, url) => const Center(child: CircularProgressIndicator()),
+                errorWidget: (context, url, error) => Icon(Icons.error),
+                )
               ),
             ),
           ),

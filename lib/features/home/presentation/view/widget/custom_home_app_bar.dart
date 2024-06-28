@@ -1,7 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:furni_hunt/core/resources/color_manager.dart';
+import 'package:furni_hunt/core/utils/app_router.dart';
 import 'package:gap/gap.dart';
+import 'package:go_router/go_router.dart';
 
 AppBar customHomeAppBar(BuildContext context) {
   return AppBar(
@@ -46,9 +48,11 @@ AppBar customHomeAppBar(BuildContext context) {
             ),
           ),
           child: IconButton(
-              onPressed: () {},
+              onPressed: () {
+                GoRouter.of(context).push(RouterPath.favouritesView);
+              },
               icon: Icon(
-                FontAwesomeIcons.bagShopping,
+                FontAwesomeIcons.heart,
                 color: Theme.of(context).iconTheme.color,
                 size: 20,
               )),

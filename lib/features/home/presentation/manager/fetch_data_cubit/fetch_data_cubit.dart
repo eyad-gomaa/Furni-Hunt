@@ -6,10 +6,18 @@ part 'fetch_data_state.dart';
 class FetchDataCubit extends Cubit<FetchDataState> {
   FetchDataCubit({required this.repo}) : super(FetchDataInitial());
   final HomeRepo repo;
+  List<ProductModel>? productList;
 
   void fetchProducts() async {
     var response = await repo.fetchProducts();
-    response.fold((l) => emit(FetchDataSuccess(productList: l)),
-        (r) => emit(FetchDataFailure(errMessage: r.failureMessage)));
+    response.fold((l) async {
+      productList = l;
+      await fetchFavouriteAndCart(productList);
+      emit(FetchDataSuccess(productList: l));
+    }, (r) => emit(FetchDataFailure(errMessage: r.failureMessage)));
+  }
+
+  fetchFavouriteAndCart(productList) async {
+    await repo.fetchFavouriteAndCart(productList: productList);
   }
 }

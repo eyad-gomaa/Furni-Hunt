@@ -1,6 +1,6 @@
 import 'package:cloud_firestore/cloud_firestore.dart';
 
-class ProductModel {
+class ProductModel{
   final String productName;
   final String productId;
   final String productPrice;
@@ -9,6 +9,8 @@ class ProductModel {
   List<dynamic> productImage;
   final String productQuantity;
   final Timestamp createdAt;
+  int? cartQuantity;
+
 
   ProductModel(
       {required this.productId,
@@ -18,7 +20,10 @@ class ProductModel {
       required this.productImage,
       required this.productQuantity,
       required this.createdAt,
-      required this.productName});
+      required this.productName,
+
+      this.cartQuantity
+      });
 
   Map<String, dynamic> toJson() {
     return <String, dynamic>{
@@ -30,10 +35,12 @@ class ProductModel {
       'productImage': productImage,
       'productQuantity': productQuantity,
       'createdAt': createdAt,
+      'cartQuantity': 1,
+
     };
   }
 
-  factory ProductModel.fromJson(Map<String, dynamic> json) {
+  factory ProductModel.fromJson(json) {
     return ProductModel(
       productName: json['productName'],
       productId: json['productId'] as String,
@@ -43,6 +50,9 @@ class ProductModel {
       productImage: json['productImage'],
       productQuantity: json['productQuantity'] as String,
       createdAt: json['createdAt'],
+      cartQuantity: json['cartQuantity'],
+
     );
   }
+
 }

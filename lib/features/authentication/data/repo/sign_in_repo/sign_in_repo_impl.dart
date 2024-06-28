@@ -1,9 +1,12 @@
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:dartz/dartz.dart';
 import 'package:firebase_auth/firebase_auth.dart';
-import 'package:furni_hunt/core/utils/failure/firebase_failure.dart';
+import 'package:furni_hunt/core/utils/failure/failure.dart';
+import 'package:furni_hunt/core/utils/stripe_service.dart';
 import 'package:furni_hunt/features/authentication/data/model/user_model.dart';
 import 'package:furni_hunt/features/authentication/data/repo/sign_in_repo/sign_in_repo.dart';
+import 'package:furni_hunt/features/payment/data/model/customer_payment_input_model.dart';
+import 'package:furni_hunt/features/payment/data/model/customer_payment_model.dart';
 import 'package:google_sign_in/google_sign_in.dart';
 
 class SignInRepoImpl implements SignInRepo {
@@ -63,7 +66,7 @@ class SignInRepoImpl implements SignInRepo {
         phone: null,
         points: null,
         dateCreated: Timestamp.now(),
-        adresses:[],
+        adresses: [],
         cart: [],
         wish: [],
         orders: []);
@@ -71,8 +74,16 @@ class SignInRepoImpl implements SignInRepo {
       try {
         FirebaseFirestore firestore = FirebaseFirestore.instance;
         CollectionReference users = firestore.collection('users');
+        StripeService stripeService = StripeService();
+
         DocumentSnapshot<Object?> doc = await users.doc(userUid).get();
         if (doc.exists == false) {
+          CustomerPaymentInputModel customerPaymentInputModel =
+              CustomerPaymentInputModel(
+                  email: userModel.email!, name: userModel.name!);
+          CustomerPaymentModel customerPaymentModel = await stripeService
+              .createCustomer(customerPaymentInput: customerPaymentInputModel);
+          userModel.custumerPaymentId = customerPaymentModel.id;
           await users.doc(userUid).set(userModel.toJson());
         }
         return left("Sign In Success");

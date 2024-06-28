@@ -1,6 +1,6 @@
 import 'package:dartz/dartz.dart';
 
-import '../../../../../core/utils/failure/firebase_failure.dart';
+import '../../../../../core/utils/failure/failure.dart';
 
 abstract class SignInRepo {
   Future<Either<String, Failure>> signInWithEmail(
